@@ -3,6 +3,7 @@ var routes = express.Router();
 
 var Account = require('../Controller/account')
 var Ledger=require('../Controller/ledger')
+var Trial=require('../Controller/trial')
 
 const returnRouter = () => {
     routes.get("/",(req,res)=>{res.send({message:"ALL DONE AND RUNNING"})})
@@ -15,6 +16,10 @@ const returnRouter = () => {
 
     routes.post("/addledger",Ledger.AddLedger)
     routes.get('/getallledger',Ledger.GetAllLedger)
+
+    // *******************Ledger Routes***************************************
+
+    routes.get('/trialbalance',Trial.TrialBalance)
 
 
     return routes
