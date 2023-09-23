@@ -6,7 +6,7 @@ var Ledger=require('../Controller/ledger')
 var Trial=require('../Controller/trial')
 
 const returnRouter = () => {
-    routes.get("/",(req,res)=>{res.send({message:"ALL DONE AND RUNNING"})})
+    routes.get("/",(req,res)=>{ return res.status(200).send({message:"ALL DONE AND RUNNING"})})
 
     // *******************Account Routes***************************************
     routes.post('/addaccount', Account.Addaccount)
